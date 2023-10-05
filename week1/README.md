@@ -39,4 +39,8 @@ dpkt is a Python library that allows you to parse and iterate over packet-captur
 
 #### Sample code
 
-Sample code to get you familiar with the dpkt syntax can be found [here](). For more details such as how to parse IP and MAC addresses, please refer to the dpkt documentation.
+Sample code to get you familiar with the dpkt syntax can be found [here](https://github.com/Haroon96/ecs152a-fall-2023/tree/main/week1/code/dpkt-example.py). The code iterates over a packet capture and prints out the request and response headers from HTTP requests. You can run it using the following syntax where `path_to_pcap_file` is the path to a packet capture.
+
+```python dpkt-example.py path_to_pcap_file```
+
+For more details such as how to parse IP and MAC addresses, please refer to the dpkt documentation.
