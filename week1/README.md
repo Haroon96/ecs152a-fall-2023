@@ -45,10 +45,12 @@ Below is an sample code to get you familiar with the dpkt syntax. For more detai
 import dpkt
 
 # read the pcap file
-with open('capture.pcap', 'rb') as f:
-	pcap = dpkt.pcap.Reader(f)
+f = open('/Users/mharoon/Downloads/test.pcap', 'rb')
+pcap = dpkt.pcap.Reader(f)
 
+# iterate over packets
 for timestamp, data in pcap:
+
     # convert to link layer object
     eth = dpkt.ethernet.Ethernet(data)
 
@@ -74,10 +76,16 @@ for timestamp, data in pcap:
     # extract application layer data
     ## if destination port is 80, it is a http request
     if tcp.dport == 80:
-        http = dpkt.http.Request(tcp.data)
+        try:
+            http = dpkt.http.Request(tcp.data)
+            print(http.headers)
+        except:
+            print("Error in parsing HTTP Request packet")
     ## if source port is 80, it is a http response
     elif tcp.sport == 80:
-        http = dpkt.http.Response(tcp.data)
-        
-    print(http.headers)
+        try:
+            http = dpkt.http.Response(tcp.data)
+            print(http.headers)
+        except:
+            print("Error in parsing HTTP Response packet")
 ```
