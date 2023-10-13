@@ -7,3 +7,4 @@
   - DM for individual questions
 
 ## Week 1: [Wireshark + dpkt](week1/)
+## Week 2: [mitmproxy + ICMP](week2/)
