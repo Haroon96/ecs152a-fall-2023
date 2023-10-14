@@ -39,4 +39,14 @@ Once you've configured mitmproxy and its certificates, you can begin decrypting 
 4. You should now be able to see decrypted traffic inside the Wireshark window. Filter for `http || http2 || http3` traffic. 
 
 ## ICMP
-Internet Control Message Protocol (ICMP)
+Internet Control Message Protocol (ICMP) is a network layer protocol that's generally used for diagnosing network issues. Two widely-used tools that use ICMP are `ping` and `traceroute`.
+
+### Ping
+#### Syntax
+ - `ping ip_address`
+ - `ping domain`
+
+### Traceroute
+#### Syntax
+ - `traceroute ip_address`
+ - `traceroute domain`
