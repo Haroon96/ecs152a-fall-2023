@@ -15,7 +15,7 @@ def parse_pcap(pcap_file):
         eth = dpkt.ethernet.Ethernet(data)
 
         # do not proceed if there is no network layer data
-        if not isinstance(eth.data, dpkt.ip.IP):
+        if not isinstance(eth.data, dpkt.ip.IP) and not isinstance(eth.data, dpkt.ip6.IP6):
             continue
         
         # extract network layer data
@@ -40,14 +40,15 @@ def parse_pcap(pcap_file):
                 http = dpkt.http.Request(tcp.data)
                 print(http.headers)
             except:
-                print("Malformed HTTP Request packet")
+                pass
+                
         ## if source port is 80, it is a http response
         elif tcp.sport == 80:
             try:
                 http = dpkt.http.Response(tcp.data)
                 print(http.headers)
             except:
-                print("Malformed HTTP Response packet")
+                pass
 
 
 if __name__ == '__main__':
