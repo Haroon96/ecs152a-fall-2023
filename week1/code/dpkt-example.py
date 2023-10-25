@@ -40,14 +40,15 @@ def parse_pcap(pcap_file):
                 http = dpkt.http.Request(tcp.data)
                 print(http.headers)
             except:
-                print("Malformed HTTP Request packet")
+                pass
+                
         ## if source port is 80, it is a http response
         elif tcp.sport == 80:
             try:
                 http = dpkt.http.Response(tcp.data)
                 print(http.headers)
             except:
-                print("Malformed HTTP Response packet")
+                pass
 
 
 if __name__ == '__main__':
