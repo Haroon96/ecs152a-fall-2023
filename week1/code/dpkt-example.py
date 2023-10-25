@@ -15,7 +15,7 @@ def parse_pcap(pcap_file):
         eth = dpkt.ethernet.Ethernet(data)
 
         # do not proceed if there is no network layer data
-        if not isinstance(eth.data, dpkt.ip.IP):
+        if not isinstance(eth.data, dpkt.ip.IP) and not isinstance(eth.data, dpkt.ip6.IP6):
             continue
         
         # extract network layer data
