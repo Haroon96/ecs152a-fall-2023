@@ -8,28 +8,29 @@
 </head>
 <body>
     <div>
-        <img id="pokemon_img" src="">
-        <button id="randomize_btn">Randomize</button>
+        <button id="add_btn">Add</button>
+        <div id="pokemon-container"></div>
     </div>
     <script>
         // load randomizer on load
-        window.onload = randomize;
+        window.onload = add;
 
         // set event handler for button click
-        document.getElementById('randomize_btn').addEventListener('click', randomize);
+        document.getElementById('add_btn').addEventListener('click', add);
 
         // randomize function
-        function randomize() {
+        function add() {
             // pick a random pokemon
             let id = Math.floor((Math.random() * 1000) + 1);
 
             // prefix number with 0s until 3 digit
             id = id.toString().padStart(3, '0');
 
-            // set image
-            const src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`;
-            document.getElementById('pokemon_img').src = src;
-            console.log("New source image", src);
+            // create a new image
+            const el = document.createElement('img');
+            el.src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`;
+            document.getElementById('pokemon-container').appendChild(el);
+            console.log("New image", el.src);
         }
     </script>
 </body>

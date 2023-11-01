@@ -1,17 +1,30 @@
 body {
     background: #fafafa;
+    text-align: center;
 }
 
-body > div {
+#pokemon-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-body > div > img {
-    width: 400px;
+#pokemon-container>img {
+    width: 120px;
 }
 
-body > div > button {
+body>div>button {
     padding: 8px 12px;
+}
+
+.image-red {
+    background-color: red;
+}
+
+.image-green {
+    background-color: green;
+}
+
+.image-blue {
+    background-color: blue;
 }
