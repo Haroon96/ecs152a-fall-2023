@@ -1,0 +1,17 @@
+body {
+    background: #fafafa;
+}
+
+body > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > div > img {
+    width: 400px;
+}
+
+body > div > button {
+    padding: 8px 12px;
+}

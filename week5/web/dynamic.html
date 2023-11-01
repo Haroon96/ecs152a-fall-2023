@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECS 152A Week 5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <img id="pokemon_img" src="">
+        <button id="randomize_btn">Randomize</button>
+    </div>
+    <script>
+        // load randomizer on load
+        window.onload = randomize;
+
+        // set event handler for button click
+        document.getElementById('randomize_btn').addEventListener('click', randomize);
+
+        // randomize function
+        function randomize() {
+            // pick a random pokemon
+            let id = Math.floor((Math.random() * 1000) + 1);
+
+            // prefix number with 0s until 3 digit
+            id = id.toString().padStart(3, '0');
+
+            // set image
+            const src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`;
+            document.getElementById('pokemon_img').src = src;
+            console.log("New source image", src);
+        }
+    </script>
+</body>
+</html>
