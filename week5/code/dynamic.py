@@ -33,4 +33,4 @@ img1 = driver.find_element(By.ID, 'img1')
 if img1:
     print(img1.get_attribute('src'))
 
-input()
+input('Press key to exit')
