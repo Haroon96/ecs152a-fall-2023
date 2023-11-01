@@ -19,6 +19,7 @@
         document.getElementById('add_btn').addEventListener('click', add);
 
         // randomize function
+        let count = 1;
         function add() {
             // pick a random pokemon
             let id = Math.floor((Math.random() * 1000) + 1);
@@ -28,11 +29,17 @@
 
             // create a new image
             const el = document.createElement('img');
+            // give element and ID
+            el.id = `img${count}`;
+            // give element the image to load
             el.src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`;
+            // add CSS classes
             el.classList.add('image');
             el.classList.add(random_class());
+            // append element to page DOM
             document.getElementById('pokemon-container').appendChild(el);
             console.log("New image", el.src);
+            count += 1;
         }
 
         function random_class() {
