@@ -29,8 +29,14 @@
             // create a new image
             const el = document.createElement('img');
             el.src = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`;
+            el.classList.add('image');
+            el.classList.add(random_class());
             document.getElementById('pokemon-container').appendChild(el);
             console.log("New image", el.src);
+        }
+
+        function random_class() {
+            return ['image-blue', 'image-red', 'image-green'][Math.floor(Math.random() * 3)];
         }
     </script>
 </body>
