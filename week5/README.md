@@ -3,5 +3,5 @@
 
 ## Web Scraping
 ### Websites:
-static_url: 'https://haroon96.github.io/ecs152a-fall-2023/week5/web/static.html'
-dynamic_url: 'https://haroon96.github.io/ecs152a-fall-2023/week5/web/dynamic.html'
+- static_url: https://haroon96.github.io/ecs152a-fall-2023/week5/web/static.html
+- dynamic_url: https://haroon96.github.io/ecs152a-fall-2023/week5/web/dynamic.html
