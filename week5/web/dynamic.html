@@ -12,7 +12,7 @@
         <div id="pokemon-container"></div>
     </div>
     <script>
-        // load randomizer on load
+        // add 3 pokemon on load
         window.onload = function() {
             add(); add(); add();
         };
@@ -20,7 +20,7 @@
         // set event handler for button click
         document.getElementById('add_btn').addEventListener('click', add);
 
-        // randomize function
+        // add pokemon function
         let count = 1;
         function add() {
             // pick a random pokemon
