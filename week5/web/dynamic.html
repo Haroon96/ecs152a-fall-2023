@@ -13,7 +13,9 @@
     </div>
     <script>
         // load randomizer on load
-        window.onload = add;
+        window.onload = function() {
+            add(); add(); add();
+        };
 
         // set event handler for button click
         document.getElementById('add_btn').addEventListener('click', add);

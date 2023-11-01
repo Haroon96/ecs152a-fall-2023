@@ -2,9 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 
 # send a request
+# switch between static and dynamic to see difference
 static_url = 'https://haroon96.github.io/ecs152a-fall-2023/week5/web/static.html'
 dynamic_url = 'https://haroon96.github.io/ecs152a-fall-2023/week5/web/dynamic.html'
-r = requests.get(dynamic_url)
+r = requests.get(static_url)
 html = r.text
 
 # convert to soup object
