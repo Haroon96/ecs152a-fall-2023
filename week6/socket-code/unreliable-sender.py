@@ -25,23 +25,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
         
         # send message out
         udp_socket.sendto(message, ('localhost', 5001))
-        
-        # wait for acknowledgement 
-        # this while loop does nothing, commenting it out will be fine
-        while True:
-            try:
-                # wait for ack
-                ack, _ = udp_socket.recvfrom(PACKET_SIZE)
-
-                # extract ack id
-                ack_id = int.from_bytes(ack[:SEQ_ID_SIZE])
-                print(ack_id, ack[SEQ_ID_SIZE:])
-
-                # do nothing with ack
-                break
-            except socket.timeout:
-                # do not resend on timeout
-                break
                 
         # move sequence id forward
         seq_id += MESSAGE_SIZE
