@@ -8,7 +8,7 @@ SEQ_ID_SIZE = 4
 MESSAGE_SIZE = PACKET_SIZE - SEQ_ID_SIZE
 
 # read data
-with open('iliad.txt', 'rb') as f:
+with open('send.txt', 'rb') as f:
     data = f.read()
  
 # create a udp socket
