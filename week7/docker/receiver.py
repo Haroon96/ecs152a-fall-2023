@@ -10,9 +10,11 @@ def create_acknowledgement(seq_id):
 # create a udp socket
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
     # bind the socket to a OS port
+    # bind to 0.0.0.0 so external 
     udp_socket.bind(("0.0.0.0", 5001))
 
     # file to write to
+    # write to some file on the hard disk
     recv = open('/hdd/recv.txt', 'wb')
     
     # start receiving packets
