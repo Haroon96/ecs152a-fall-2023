@@ -33,7 +33,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
                 break
 
             # 1% chance of packet drop
-            if random.random() < 0.1:
+            if random.random() < 0.01:
                 print(f"Dropping {seq_id}")
                 continue
             
