@@ -33,11 +33,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
                 break
 
             # 1% chance of packet drop
-            if random.random() < 0.01:
+            if random.random() < 0.05:
                 print(f"Dropping {seq_id}")
                 continue
             
             # write message to file
+            recv.seek(seq_id)
             recv.write(message)
 
             # create the acknowledgement

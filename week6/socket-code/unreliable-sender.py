@@ -21,7 +21,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
         
         # construct message
         # sequence id of length SEQ_ID_SIZE + message of remaining PACKET_SIZE - SEQ_ID_SIZE bytes
-        message = int.to_bytes(seq_id, SEQ_ID_SIZE, signed=True) + data[seq_id : seq_id + MESSAGE_SIZE]
+        message = int.to_bytes(seq_id, SEQ_ID_SIZE, signed=True, byteorder='big') + data[seq_id : seq_id + MESSAGE_SIZE]
         
         # send message out
         udp_socket.sendto(message, ('localhost', 5001))
@@ -30,4 +30,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
         seq_id += MESSAGE_SIZE
         
     # send final closing message
-    udp_socket.sendto(int.to_bytes(-1, 4, signed=True), ('localhost', 5001))
+    udp_socket.sendto(int.to_bytes(-1, 4, signed=True, byteorder='big'), ('localhost', 5001))
