@@ -24,5 +24,4 @@ COPY docker-script.sh ./
 COPY receiver.py ./
 
 # start receiver
-CMD ["tc", "qdisc", "add", "dev", "eth0", "root", "netem", "loss", "20%"]
 CMD ["./docker-script.sh"]

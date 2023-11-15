@@ -1,5 +1,4 @@
 import socket
-from datetime import datetime
 
 # total packet size
 PACKET_SIZE = 1024
