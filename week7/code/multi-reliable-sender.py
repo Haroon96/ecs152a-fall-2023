@@ -8,7 +8,7 @@ SEQ_ID_SIZE = 4
 # bytes available for message
 MESSAGE_SIZE = PACKET_SIZE - SEQ_ID_SIZE
 # total packets to send
-WINDOW_SIZE = 10
+WINDOW_SIZE = 20
 
 # read data
 with open('send.txt', 'rb') as f:
