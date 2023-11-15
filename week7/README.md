@@ -12,3 +12,9 @@ The `Dockerfile` specifies the structure of a Docker `image`. The constructed `i
 - `receiver.py`: The receiver socket code.
 - `sender.py`: The sender socket code.
 - `hdd`: Folder that acts as a hard disk for the Docker container.
+
+### Getting Started
+1. Put your receiver code inside `receiver.py`.
+2. Make sure the right ports are exposed inside `start-simulator.sh` or `start-simulator.bat`.
+3. Start your receiver code using `./start-simulator.sh` (Mac, Linux) or `./start-simulator.bat` (Windows).
+4. Start your sender code using normal Python `python sender.py`.
