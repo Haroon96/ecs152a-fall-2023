@@ -14,8 +14,6 @@ WINDOW_SIZE = 20
 with open('send.txt', 'rb') as f:
     data = f.read()
  
-start = datetime.now()
-timeouts = 0
 # create a udp socket
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
 
@@ -62,7 +60,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
                 # no ack received, resend unacked messages
                 for sid, message in messages:
                     if not acks[sid]:
-                        timeouts+= 1
                         udp_socket.sendto(message, ('localhost', 5001))
                 
         # move sequence id forward
@@ -70,5 +67,3 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
         
     # send final closing message
     udp_socket.sendto(int.to_bytes(-1, 4, signed=True, byteorder='big'), ('localhost', 5001))
-    print(datetime.now() - start)
-    print(timeouts)

@@ -12,7 +12,6 @@ MESSAGE_SIZE = PACKET_SIZE - SEQ_ID_SIZE
 with open('send.txt', 'rb') as f:
     data = f.read()
  
-start = datetime.now()
 # create a udp socket
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
 
@@ -53,4 +52,3 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
         
     # send final closing message
     udp_socket.sendto(int.to_bytes(-1, 4, signed=True, byteorder='big'), ('localhost', 5001))
-    print(datetime.now() - start)
